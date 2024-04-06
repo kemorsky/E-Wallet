@@ -1,0 +1,19 @@
+@import '../../styles/mixins';
+
+.new-card-wrapper {
+    @include wrapper;
+}
+
+.add__new__button {
+    width: 382px;
+    height: 72px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+p {
+    @include p;
+}

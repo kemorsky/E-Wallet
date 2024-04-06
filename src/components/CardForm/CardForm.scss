@@ -1,0 +1,28 @@
+@import '../../styles/mixins';
+
+h3 {
+    color: black;
+    opacity: 0.8;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input {
+    @include input-box-big;
+    width: 382px;
+}
+
+.input-big {
+    width: 382px;
+}
+
+.input-small {
+    width: 175px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}

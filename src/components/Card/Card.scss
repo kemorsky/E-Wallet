@@ -1,0 +1,35 @@
+@import '../../styles/mixins';
+
+.card {
+    @include card;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(0 0 0 / 10%);
+
+    h2 {
+        font-size: 29px;
+        font-weight: 400;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .card-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+        &.article__1 {
+            align-items: flex-start;
+        }
+
+        &.article__2 {
+            align-items: flex-end;
+        }
+    }
+
+    
+}
