@@ -1,9 +1,9 @@
 import React from 'react';
 import './Card.scss';
 
-function Card({ number, name, valid, ccv, vendor, onClick }) {
+function Card({ number, index, name, valid, ccv, vendor, onClick }) {
   return (
-    <div className='card' onClick={onClick}>
+    <div className='card' onClick={onClick} index= {index}>
       <h2>{number}</h2>
       <div className='card-info'>
         <article className='article__2'>

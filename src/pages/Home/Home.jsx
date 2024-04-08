@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function Home() {
 
     const activeCard = useSelector(state => state.card.activeCard)
-
+    const stackCards = useSelector(state => state.card.cards.filter(card => card !== activeCard));
     const dispatch = useDispatch();
 
     const handleCardClick = (card) => {
@@ -26,7 +26,7 @@ function Home() {
             <h1>E-WALLET</h1>
             <p>ACTIVE CARD</p>
             {activeCard && <Card {...activeCard} />}
-            < CardStack onCardClick={handleCardClick}/>
+            < CardStack cards={stackCards} onCardClick={handleCardClick}/>
             <button className='add__button' onClick={handleClick}>ADD A NEW CARD</button>
         </div>
     )
