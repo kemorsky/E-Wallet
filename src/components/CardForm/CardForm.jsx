@@ -64,12 +64,12 @@ function CardForm() {
       </div>
       <div className='input-big'>
         <h3>VENDOR</h3>
-        <select value={formData.vendor} onChange={handleInputChange} name="vendor">
-            <option value="">Select a Vendor</option>
-            <option value="1">BitCoin</option>
-            <option value="2">EvilCorp</option>
-            <option value="3">MasterCard</option>
-            <option value="4">Blockchain Inc</option>
+        <select className='vendor-select' value={formData.vendor} onChange={handleInputChange} name="vendor">
+            <option value="default">Select a Vendor</option>
+            <option value="Bitcoin Inc">Bitcoin Inc</option>
+            <option value="EvilCorp">EvilCorp</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="Block Chain Inc">Block Chain Inc</option>
         </select>
       </div>
       <button onClick={handleAddCard}>Add Card</button>
