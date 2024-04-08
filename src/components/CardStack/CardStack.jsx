@@ -1,27 +1,30 @@
-import './CardStack.scss'
-import { useState } from 'react'
-import Card from '../Card/Card'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Card from '../Card/Card';
+import './CardStack.scss';
+import { useDispatch } from 'react-redux';
 
-function CardStack() {
+function CardStack({onCardClick}) {
+  // Use a default empty array if cards state is undefined
+  const dispatch = useDispatch()
+  const cards = useSelector(state => state.card.cards || []);
 
-const [cards, setCards] = useState([
-    {id: 1, number: '', name: '', valid: ''},
-    {id: 2, number: '', name: '', valid: ''},
-    {id: 3, number: '', name: '', valid: ''},
-    {id: 4, number: '', name: '', valid: ''}
-]);
+  const handleClick = (card) => {
+    onCardClick(card); // Dispatch setActiveCard action in Home component
+    console.log('Card clicked:', card);
+  };
 
-const cardComponents = cards.map((card) => {
-    return <Card className="stacked-card" key= {card.id} number= {card.number} name= {card.name} date={card.valid} />
-})
+  const cardComponents = cards.map((card, index) => (
+    <Card 
+        className='stacked-card' 
+        key={index}
+        {...card}
+        onClick={() => handleClick(card)} />
+  ));
 
-console.log(setCards)
+  console.log(cards)
 
-    return (
-        <div>
-            {cardComponents}
-        </div>
-    )
+  return <div className='card-stack'>{cardComponents}</div>;
 }
 
-export default CardStack
+export default CardStack;
