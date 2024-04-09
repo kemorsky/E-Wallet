@@ -10,12 +10,11 @@ function Home() {
     const activeCard = useSelector(state => state.card.activeCard)
     const stackCards = useSelector(state => state.card.cards.filter(card => card !== activeCard));
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleCardClick = (card) => {
         dispatch(setActiveCard(card));
     }
-
-    const navigate = useNavigate();
 
     function handleClick() {
         navigate("/addcard")
@@ -24,8 +23,12 @@ function Home() {
     return (
         <div className='home-wrapper'>
             <h1>E-WALLET</h1>
-            <p>ACTIVE CARD</p>
-            {activeCard && <Card {...activeCard} />}
+            {activeCard && (
+                <>
+                    <p>ACTIVE CARD</p>
+                    <Card {...activeCard} />
+                </>
+            )}
             < CardStack cards={stackCards} onCardClick={handleCardClick}/>
             <button className='add__button' onClick={handleClick}>ADD A NEW CARD</button>
         </div>

@@ -48,19 +48,21 @@ function CardForm() {
         < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendor = {formData.vendor} index={0} />
       <div className='input-big'>
         <h3>CARD NUMBER</h3>
-        <input value={formData.number} onChange={handleInputChange} name="number" type="text" placeholder='Card Number' />
+        <input className='input-big-box' value={formData.number} onChange={handleInputChange} name="number" type="text" placeholder='Card Number' />
       </div>
       <div className='input-big'>
         <h3>CARD HOLDER</h3>
-        <input value={formData.name} onChange={handleInputChange} name="name" type="text" />
+        <input className='input-big-box' value={formData.name} onChange={handleInputChange} name="name" type="text" />
       </div>
-      <div className='input-small'>
-        <h3>VALID THRU</h3>
-        <input value={formData.valid} onChange={handleInputChange} name="valid" type="text" />
-      </div>
-      <div className='input-small'>
-        <h3>CCV</h3>
-        <input value={formData.ccv} onChange={handleInputChange} name="ccv" type="text" />
+      <div className='small-inputs-container'>
+        <div className='input-small'>
+          <h3>VALID THRU</h3>
+          <input className='input-small-box' value={formData.valid} onChange={handleInputChange} name="valid" type="text" />
+        </div>
+        <div className='input-small'>
+          <h3>CCV</h3>
+          <input className='input-small-box' value={formData.ccv} onChange={handleInputChange} name="ccv" type="text" />
+        </div>
       </div>
       <div className='input-big'>
         <h3>VENDOR</h3>
@@ -72,7 +74,7 @@ function CardForm() {
             <option className='blockchain' value="blockchain">Block Chain Inc</option>
         </select>
       </div>
-      <button onClick={handleAddCard}>Add Card</button>
+      <button className='add_card_button' onClick={handleAddCard}>ADD CARD</button>
     </div>
   );
 }
