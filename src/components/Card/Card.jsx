@@ -2,8 +2,11 @@ import React from 'react';
 import './Card.scss';
 
 function Card({ number, index, name, valid, ccv, vendor, onClick }) {
+
+  const cardClass = `${vendor.toLowerCase()} card`;
+  
   return (
-    <div className='card' onClick={onClick} index= {index}>
+    <div className={cardClass} onClick={onClick} index= {index}>
       <h2>{number}</h2>
       <div className='card-info'>
         <article className='article__2'>

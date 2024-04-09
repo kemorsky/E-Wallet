@@ -45,7 +45,7 @@ function CardForm() {
 
   return (
     <div className='wrapper'>
-        < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendore = {formData.vendor} />
+        < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendor = {formData.vendor} index={0} />
       <div className='input-big'>
         <h3>CARD NUMBER</h3>
         <input value={formData.number} onChange={handleInputChange} name="number" type="text" placeholder='Card Number' />
@@ -66,10 +66,10 @@ function CardForm() {
         <h3>VENDOR</h3>
         <select className='vendor-select' value={formData.vendor} onChange={handleInputChange} name="vendor">
             <option value="default">Select a Vendor</option>
-            <option value="Bitcoin Inc">Bitcoin Inc</option>
-            <option value="EvilCorp">EvilCorp</option>
-            <option value="MasterCard">MasterCard</option>
-            <option value="Block Chain Inc">Block Chain Inc</option>
+            <option className='bitcoin' value="bitcoin" >Bitcoin Inc</option>
+            <option className='evil' value="evil">EvilCorp</option>
+            <option className='ninja' value="ninja">Ninja</option>
+            <option className='blockchain' value="blockchain">Block Chain Inc</option>
         </select>
       </div>
       <button onClick={handleAddCard}>Add Card</button>
