@@ -4,7 +4,7 @@ import './AddCard.scss'
 function AddCard() {
     return (
         <div className="new-card-wrapper">
-            <h1>ADD A NEW BANK CARD</h1>
+            <h1>ADD A NEW <br></br> BANK CARD</h1>
             <p>NEW CARD</p>
             <CardForm />
         </div>

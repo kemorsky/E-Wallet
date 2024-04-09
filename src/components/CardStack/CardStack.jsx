@@ -12,7 +12,7 @@ function CardStack({onCardClick}) {
     console.log('Card clicked:', card);
   };
 
-  const cardComponents = cards.map((card, index) => (
+  const cardComponents = cards.map((card, index, cardClass) => (
     <Card 
         className='stacked-card' 
         key={index}

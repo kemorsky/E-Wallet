@@ -1,61 +1,81 @@
 @import '../../styles/mixins';
 @import '../../styles/styles';
-$bitcoin-icon: url('./vendor-bitcoin.svg');
-$evil-icon: url('./vendor-evil.svg');
-$ninja-icon: url('./vendor-ninja.svg');
-$blockchain-icon: url('./vendor-blockchain.svg');
-$chip-dark: url('./chip-dark.svg');
-$chip-light: url('./chip-light.svg');
+
+$bitcoin-icon: url('./vendor-bitcoin.svg') no-repeat top right;
+$evil-icon: url('./vendor-evil.svg')  no-repeat top right;
+$ninja-icon: url('./vendor-ninja.svg') no-repeat top right;
+$blockchain-icon: url('./vendor-blockchain.svg') no-repeat top right;
+$chip-dark: url('./chip-dark.svg') no-repeat top left;
+$chip-light: url('./chip-light.svg') no-repeat top left;
 
 .card {
     @include card;
+    font-family: "PT Mono", monospace;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(0 0 0 / 10%);
     background-size: contain;
 
     h2 {
         font-size: 29px;
         font-weight: 400;
+        font-family: "PT Mono", monospace;
+        transform: translate(2.5%, 170%);
     }
 
     h3 {
         font-size: 18px;
+        font-family: "PT Mono", monospace;
     }
 
     .card-info {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-top: 70px;
+        padding-left: 8px;
+        padding-right: 10px;
+        transform: translateY(15%);
+        line-height: 0.3;
         
 
         &.article__1 {
             align-items: flex-start;
+            height: 68px;
         }
 
         &.article__2 {
             align-items: flex-end;
+            text-align: right;  
+            height: 68px;
+            
+            h3 {
+                text-align: right;
+            }
         }
     }
 
 }
 
 .bitcoin {
-    background: $bitcoin-icon no-repeat, $chip-dark no-repeat, $bitcoin-bg;
+    background: $bitcoin-icon, $chip-dark, $bitcoin-bg;
     color: black;
+    background-position: 92% 16%, 8% 16%, center;
 }
 
 .evil {
-    background: $evil-icon no-repeat, $chip-light no-repeat  $evil-bg;
+    background: $evil-icon, $chip-light, $evil-bg;
     color: white;
+    background-position: 92% 16%, 8% 16%, center;
 }
 
 .ninja {
-    background:  $ninja-icon no-repeat, $chip-light no-repeat $ninja-bg;
+    background:  $ninja-icon, $chip-light, $ninja-bg;
     color: white;
+    background-position: 92% 16%, 8% 16%, center;
 }
 
 .blockchain {
-    background: $blockchain-icon no-repeat, $chip-dark no-repeat, $blockchain-bg;
+    background: $blockchain-icon, $chip-dark, $blockchain-bg;
     color: black;
+    background-position: 92% 16%, 8% 16%, center;
 }
