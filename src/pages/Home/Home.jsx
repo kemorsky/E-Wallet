@@ -12,9 +12,9 @@ function Home() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleCardClick = (card) => {
-        dispatch(setActiveCard(card));
-    }
+    // const handleCardClick = (card) => {
+    //     dispatch(setActiveCard(card));
+    // }
 
     function handleClick() {
         navigate("/addcard")
@@ -29,7 +29,7 @@ function Home() {
                     <Card {...activeCard} />
                 </>
             )}
-            < CardStack cards={stackCards} onCardClick={handleCardClick}/>
+            < CardStack cards={stackCards}/>
             <button className='add__button' onClick={handleClick}>ADD A NEW CARD</button>
         </div>
     )

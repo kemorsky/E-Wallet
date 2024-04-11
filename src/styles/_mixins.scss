@@ -5,6 +5,7 @@
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0.5rem;
 }
 
 @mixin input-box-big {
@@ -38,5 +39,6 @@
 }
 
 @mixin stacked-card {
-    // position: absolute;
+    position: relative;
+    
 }

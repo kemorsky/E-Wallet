@@ -1,14 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from '../Card/Card';
+import { setActiveCard, removeFromStack } from '../../app/cardReducer'; // Import the new action
 import './CardStack.scss';
 
 function CardStack({onCardClick}) {
   
+  const dispatch = useDispatch()
   const cards = useSelector(state => state.card.cards || []);
 
   const handleCardClick = (card) => {
-    onCardClick(card); // Dispatch setActiveCard action in Home component
+    dispatch(setActiveCard(card))
+    dispatch(removeFromStack(card))
+    // onCardClick(card); // Dispatch setActiveCard action in Home component
     console.log('Card clicked:', card);
   };
 
@@ -20,9 +24,13 @@ function CardStack({onCardClick}) {
         onClick={() => handleCardClick(card)} />
   ));
 
+  const defaultCardComponent = !cards.length ? (
+    <Card className='stacked-card' number="XXXX XXXX XXXX XXXX" name="" valid="" vendor="" />
+  ) : null;
+
   console.log(cards)
 
-  return <div className='card-stack'>{cardComponents}</div>;
+  return <div className='card-stack'>{defaultCardComponent}{cardComponents}</div>;
 }
 
 export default CardStack;

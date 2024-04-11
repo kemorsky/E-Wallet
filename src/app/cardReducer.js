@@ -22,10 +22,16 @@ const cardSlice = createSlice({
         activeCard: action.payload
       };
     },
+    removeFromStack(state, action) {
+      return {
+        ...state,
+        cards: state.cards.filter(card => card !== action.payload)
+      }
+    }
     // Optionally, you might want to add reducers for removing or updating cards
   },
 });
 
-export const { addNewCard, setActiveCard } = cardSlice.actions;
+export const { addNewCard, setActiveCard, removeFromStack } = cardSlice.actions;
 
 export default cardSlice.reducer;
