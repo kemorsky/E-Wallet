@@ -24,7 +24,13 @@ p {
     background-color: white;
     color: black;
     font-size: 22px;
+    font-family: "PT Mono", monospace;
     font-weight: 700;
     display: block;
     margin: auto;
+    top: 150px; 
+}
+
+.active {
+    margin-bottom: 60px;
 }

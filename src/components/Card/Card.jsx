@@ -1,9 +1,9 @@
 import React from 'react';
 import './Card.scss';
 
-function Card({ number, index, name, valid, ccv, vendor, onClick }) {
+function Card({ number, index, name, valid, ccv, vendor, onClick, className }) {
 
-  const cardClass = `${vendor.toLowerCase()} card stacked-card`;
+  const cardClass = `${vendor.toLowerCase()} card ${className || ''}`;
   
   return (
     <div className={cardClass} onClick={onClick} index= {index}>

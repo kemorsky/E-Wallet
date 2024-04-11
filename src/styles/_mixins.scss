@@ -1,6 +1,6 @@
 @mixin wrapper {
     width: 414px;
-    height: 896px;
+    max-height: 896px;
     background-color: white;
     border-radius: 5px;
     margin-left: auto;
@@ -26,7 +26,6 @@
     border-radius: 8px;
     padding: 1rem;
     color: black;
-    background: $chip-dark, rgb(0 0 0 / 10%);
 }
 
 @mixin p {
@@ -40,5 +39,4 @@
 
 @mixin stacked-card {
     position: relative;
-    
 }

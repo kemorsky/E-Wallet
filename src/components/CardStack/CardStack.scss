@@ -1,5 +1,41 @@
 @import '../../styles/mixins';
 
+.card-stack {
+    position: relative;
+    z-index: 1;
+    max-height: 380px;
+}
+
 .stacked-card {
     @include stacked-card;
+    
 }
+
+.stacked-card:nth-child(1) {
+    @include stacked-card;
+}
+
+.stacked-card:nth-child(2) {
+    @include stacked-card;
+    top: -190px; 
+    margin-bottom: -190px;
+}
+
+.stacked-card:nth-child(3) {
+    @include stacked-card;
+    top: -190px; 
+    margin-bottom: -190px;
+}
+
+.stacked-card:nth-child(4) {
+    @include stacked-card;
+    top: -190px; 
+    margin-bottom: -190px;
+}
+
+// .stacked-card:not(:last-child) {
+//     @include stacked-card;
+//     margin-bottom: -20px;
+// }
+
+

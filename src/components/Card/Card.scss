@@ -14,6 +14,8 @@ $chip-light: url('./chip-light.svg') no-repeat top left;
     margin-left: auto;
     margin-right: auto;
     background-size: contain;
+    background: $chip-dark, rgb(0 0 0 / 10%);
+    background-position: 8% 16%, center;
 
     h2 {
         font-size: 29px;
