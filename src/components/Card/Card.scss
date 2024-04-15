@@ -22,6 +22,7 @@ $chip-light: url('./chip-light.svg') no-repeat top left;
         font-weight: 400;
         font-family: "PT Mono", monospace;
         transform: translate(2.5%, 170%);
+        max-height: 42px;
     }
 
     h3 {
