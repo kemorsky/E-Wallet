@@ -45,7 +45,7 @@ function CardForm() {
 
   return (
     <div className='wrapper'>
-        < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendor = {formData.vendor} index={0} />
+        < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendor = {formData.vendor} {...formData } index={0} />
       <div className='input-big'>
         <h3>CARD NUMBER</h3>
         <input className='input-big-box' value={formData.number} onChange={handleInputChange} name="number" type="text" />
