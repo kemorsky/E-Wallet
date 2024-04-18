@@ -1,9 +1,17 @@
 import React from 'react';
 import './Card.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import {deleteCard} from '../../app/cardReducer'
 
 function Card({ number, index, name, valid, ccv, vendor, onClick, className }) {
 
   const cardClass = `${vendor.toLowerCase()} card ${className || ''}`;
+
+  const dispatch = useDispatch()
+
+  const handleCardRemoval = () => {
+    dispatch(deleteCard(index))
+  }
   
   return (
     <div className={cardClass} onClick={onClick} index= {index}>
@@ -17,6 +25,7 @@ function Card({ number, index, name, valid, ccv, vendor, onClick, className }) {
           <p>VALID THRU</p>
           <h3>{valid}</h3>
         </article>
+        <button className='delete_btn' onClick={handleCardRemoval}>X</button>
       </div>
     </div>
   );
