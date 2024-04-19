@@ -2,8 +2,6 @@ import './Home.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import Card from '../../components/Card/Card';
 import CardStack from '../../components/CardStack/CardStack';
-// import {setActiveCard} from '../../app/cardReducer'
-// import { useNavigate } from 'react-router-dom';
 
 function Home() {
 

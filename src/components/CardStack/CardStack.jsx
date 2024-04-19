@@ -10,10 +10,8 @@ function CardStack() {
   const cards = useSelector(state => state.card.cards || []);
   const activeCard = useSelector(state => state.card.activeCard);
 
-  // Filter out the active card
   const stackCards = cards.filter(card => card !== activeCard);
 
-  // Map stackCards to Card components with stacked-card class
   const cardComponents = stackCards.map((card, index) => (
     <Card 
       className='stacked-card'
@@ -30,7 +28,7 @@ function CardStack() {
     const isCardActive = activeCard === card;
   
     if (isCardActive) {
-      dispatch(setActiveCard(null)); // Deselect the active card if it's clicked
+      dispatch(setActiveCard(null)); 
     } else {
       dispatch(setActiveCard(card));
     }

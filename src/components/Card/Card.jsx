@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {deleteCard} from '../../app/cardReducer'
 
 function Card({ number, index, name, valid, ccv, vendor, onClick, className }) {

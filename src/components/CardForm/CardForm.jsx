@@ -29,14 +29,11 @@ function CardForm() {
   const navigate = useNavigate();
 
   const handleAddCard = () => {
-    // Create a new card object with all properties
     const newCard = { ...formData, key: cards.length };
         
-    // Dispatch the action with the new card object
     dispatch(addNewCard(newCard));
     navigate('/')
     
-    // Clear form data after adding card
     setFormData({
       number: '',
       name: '',

@@ -39,10 +39,8 @@ const cardSlice = createSlice({
       const { cards, activeCard } = state;
       const deletedCardIndex = action.payload;
     
-      // Filter out the card to delete from the cards array based on its index
       const deletedCard = cards.filter((_, index) => index !== deletedCardIndex);
     
-      // If the active card is deleted, set activeCard to null
       const newActiveCard = activeCard === deletedCardIndex ? null : activeCard;
     
       localStorage.setItem('cards', JSON.stringify(deletedCard));
