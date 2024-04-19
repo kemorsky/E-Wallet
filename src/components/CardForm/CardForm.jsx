@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addNewCard } from '../../app/cardReducer';
 import Card from '../Card/Card';
@@ -7,13 +7,16 @@ import './CardForm.scss';
 
 function CardForm() {
   const dispatch = useDispatch();
+  const cards = useSelector(state => state.card.cards); // Fetch cards from Redux store
   const [formData, setFormData] = useState({
     number: '',
     name: '',
     valid: '',
     ccv: '',
-    vendor: ''
+    vendor: '',
+    key: 0
   });
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,8 +30,8 @@ function CardForm() {
 
   const handleAddCard = () => {
     // Create a new card object with all properties
-    const newCard = { ...formData };
-    
+    const newCard = { ...formData, key: cards.length };
+        
     // Dispatch the action with the new card object
     dispatch(addNewCard(newCard));
     navigate('/')
@@ -39,13 +42,14 @@ function CardForm() {
       name: '',
       valid: '',
       ccv: '',
-      vendor: ''
+      vendor: '',
+      key: formData.key + 1
     });
   };
 
   return (
     <div className='wrapper'>
-        < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendor = {formData.vendor} {...formData } index={0} />
+        < Card number = {formData.number} name= {formData.name} valid = {formData.valid} ccv = {formData.ccv} vendor = {formData.vendor} index = {formData.key} />
       <div className='input-big'>
         <h3>CARD NUMBER</h3>
         <input className='input-big-box' value={formData.number} onChange={handleInputChange} name="number" type="text" />

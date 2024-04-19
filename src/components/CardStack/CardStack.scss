@@ -3,7 +3,8 @@
 .card-stack {
     position: relative;
     z-index: 1;
-    max-height: 380px;
+    min-height: 40%;
+    max-height: 100%;
 }
 
 .stacked-card {
@@ -32,9 +33,5 @@
     margin-bottom: -190px;
 }
 
-// .stacked-card:not(:last-child) {
-//     @include stacked-card;
-//     margin-bottom: -20px;
-// }
 
 

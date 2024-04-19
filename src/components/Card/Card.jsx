@@ -15,17 +15,17 @@ function Card({ number, index, name, valid, ccv, vendor, onClick, className }) {
   
   return (
     <div className={cardClass} onClick={onClick} index= {index}>
+      <button className='delete_btn' onClick={handleCardRemoval}>X</button>
       <h2>{number || 'XXXX XXXX XXXX XXXX'}</h2>
       <div className='card-info'>
-        <article className='article__2'>
+        <article className='article__1'>
           <p>CARDHOLDER NAME</p>
-          <h3>{name}</h3>
+          <h3 className='name'>{name}</h3>
         </article>
         <article className='article__2'>
           <p>VALID THRU</p>
-          <h3>{valid}</h3>
+          <h3 className='valid'>{valid}</h3>
         </article>
-        <button className='delete_btn' onClick={handleCardRemoval}>X</button>
       </div>
     </div>
   );

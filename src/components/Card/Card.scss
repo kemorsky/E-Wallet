@@ -16,6 +16,7 @@ $chip-light: url('./chip-light.svg') no-repeat top left;
     background-size: contain;
     background: $chip-dark, rgb(0 0 0 / 10%);
     background-position: 8% 16%, center;
+    color: rgb(0 0 0 / 80%);
 
     h2 {
         font-size: 29px;
@@ -41,27 +42,35 @@ $chip-light: url('./chip-light.svg') no-repeat top left;
         line-height: 0.3;
         height: 68px;
 
-        &.article__1 {
+        .article__1 {
             align-items: flex-start;
             height: 68px;
+
+            p {
+                text-align: left;
+            }
+
+            .name {
+                text-align: left;
+            }
+
         }
 
-        &.article__2 {
+        .article__2 {
             align-items: flex-end;
             text-align: right;  
             height: 68px;
             
-            h3 {
-                text-align: right;
+            .valid {
+                text-align: left;
             }
         }
     }
-
 }
 
 .bitcoin {
     background: $bitcoin-icon, $chip-dark, $bitcoin-bg;
-    color: black;
+    color: rgb(0 0 0 / 80%);
     background-position: 92% 16%, 8% 16%, center;
 }
 
@@ -69,16 +78,29 @@ $chip-light: url('./chip-light.svg') no-repeat top left;
     background: $evil-icon, $chip-light, $evil-bg;
     color: white;
     background-position: 92% 16%, 8% 16%, center;
+
+    .name, .valid {
+        color: white;
+    }
 }
 
 .ninja {
     background:  $ninja-icon, $chip-light, $ninja-bg;
     color: white;
     background-position: 92% 16%, 8% 16%, center;
+
+    .name, .valid {
+        color: white;
+    }
 }
 
 .blockchain {
     background: $blockchain-icon, $chip-dark, $blockchain-bg;
-    color: black;
+    color: rgb(0 0 0 / 80%);
     background-position: 92% 16%, 8% 16%, center;
+}
+
+.delete_btn {
+    position: absolute;
+    transform: translate(1690%, -25%);
 }
